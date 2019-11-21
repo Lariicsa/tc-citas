@@ -1,0 +1,29 @@
+//Font
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500&display=swap");
+
+//Font-sizes
+$big-size: 1.8rem;
+$regular-size: 1.6rem;
+$medium-size: 1.5rem;
+$small-size: 1.4rem;
+
+//Font weight
+$regular: 300;
+$medium: 400;
+$bold: 500;
+
+//colors
+$primary: rgb(234, 152, 62);
+$secondary: rgba(234, 152, 62, 0.3);
+$grey: rgb(122, 122, 122);
+$grey-lite: rgba(122, 122, 122, 0.6);
+$blackio: rgb(0, 0, 0);
+$clear: rgb(255, 255, 255);
+$accent: rgb(100, 195, 184);
+
+//responsive
+@mixin mobile($device) {
+  @media screen and (max-width: $device - 1px) {
+    @content;
+  }
+}

@@ -1,0 +1,94 @@
+@import "vars.scss";
+html {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: $regular-size;
+  font-family: sans-serif;
+  color: $blackio;
+}
+
+
+
+a,
+.link {
+  color: $accent;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0.4rem 0;
+  line-height: initial;
+  font-size: $medium-size;
+  color: $grey;
+}
+
+input,
+button,
+select {
+  outline: 0;
+}
+
+.space {
+  background-color: $clear;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  padding: 1.6rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 120rem;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  margin: auto 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  overflow-wrap: break-word;
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.md {
+    width: 48%;
+
+    @include mobile(1024px) {
+      width: 100%;
+    }
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: auto;
+  width: 100%;
+  overflow-wrap: break-word;
+}
