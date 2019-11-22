@@ -104,6 +104,7 @@ export default {
     height: 100%;
     width: 100%;
     position: absolute;
+    z-index: 10;
   }
 
   .card-carousel-wrapper {
