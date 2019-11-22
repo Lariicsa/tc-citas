@@ -8,12 +8,15 @@
       <div class="row center">
         <p>Elige la fecha y en qué momento del día:</p>
       </div>
-      <div class="row">
-        <div class="radioGroup">
-          <ul>
-            <OptionButton name="options" label="Por la mañana" :value="selectedValue" @change="changeValue"/>
-            <OptionButton name="options" label="Por la tarde" :value="selectedValue" @change="changeValue"/>
+      <div class="row center">
+          <ul class="row md center">
+            <OptionButton name="options" :checked="false"  @change="changeValue">Por la mañana</OptionButton>
+            <OptionButton :checked="true" name="options"  @change="changeValue">Por la tarde</OptionButton>
           </ul>
+      </div>
+      <div class="container">
+        <div class="row">
+          <Calendar />
         </div>
       </div>
       <div class="container">
@@ -50,7 +53,7 @@ export default {
   },
   data() {
     return {
-      selectedValue: "1"
+      selectedValue: ''
     };
   },
   methods: {
