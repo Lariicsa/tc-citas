@@ -70,6 +70,10 @@ select {
   position: relative;
   overflow-wrap: break-word;
 
+  &.center {
+    justify-content: center;
+  }
+
   &.between {
     justify-content: space-between;
   }
