@@ -34,7 +34,7 @@ export default {
 @import "../scss/index.scss";
 .radio-wrap {
   background-color: $clear;
-  margin: 8% 0 8% 3.2rem;
+  margin: 4% 0 4% 3.2rem;
   &:first-child {
     margin-left: 0;
   }

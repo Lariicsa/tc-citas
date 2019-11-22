@@ -70,6 +70,10 @@ export default {
     border-radius: 0.2rem;
     padding: 0.8rem;
     text-indent: 0.4rem;
+
+    &:focus {
+      border: 0.1rem solid $grey;
+    }
   }
 
   .field {
