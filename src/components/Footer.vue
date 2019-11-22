@@ -1,10 +1,10 @@
 <template>
   <footer>
-    <div class="container">
+    <div class="container in">
       <div class="row md">
         <p>Visita nuestras redes sociales</p>
       </div>
-      <div class="row md">
+      <div class="row md right">
         <ul>
           <li>fb</li>
           <li>yt</li>
@@ -23,5 +23,35 @@ footer {
   height: 10vh;
   background-color: $primary;
   width: 100%;
+
+  * {
+    font-size: $regular-size;
+    color: $clear;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    & > li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1.8rem;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      & > a {
+        color: $clear;
+        text-decoration: none;
+      }
+    }
+  }
 }
 </style>
