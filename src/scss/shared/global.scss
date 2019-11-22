@@ -14,11 +14,9 @@ body {
 * {
   box-sizing: border-box;
   font-size: $regular-size;
-  font-family: sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: $blackio;
 }
-
-
 
 a,
 .link {
@@ -57,7 +55,7 @@ select {
   padding: 1.6rem;
   justify-content: space-between;
   width: 100%;
-  max-width: 120rem;
+  max-width: 86rem;
   flex-wrap: wrap;
 }
 
@@ -95,4 +93,17 @@ select {
   min-height: auto;
   width: 100%;
   overflow-wrap: break-word;
+}
+
+button {
+  border: none;
+  border-radius: 0.4rem;
+  background-color: $primary;
+  color: $clear;
+  padding: 0.8rem;
+
+  &.large {
+    padding: 1rem 0;
+    width: 100%;
+  }
 }

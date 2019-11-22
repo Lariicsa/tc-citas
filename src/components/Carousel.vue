@@ -1,7 +1,8 @@
 <template>
   <div style="width: 100%">
-    <div class="card-carousel--nav__right" @click="moveCarousel(1)" :disabled="atEndOfList"></div>
     <div class="card-carousel--nav__left" @click="moveCarousel(-1)" :disabled="atHeadOfList"></div>
+    <div class="card-carousel--nav__right" @click="moveCarousel(1)" :disabled="atEndOfList"></div>
+
     <div class="card-carousel-wrapper">
       <div class="card-carousel">
         <div class="card-carousel--overflow-container">
@@ -86,7 +87,7 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

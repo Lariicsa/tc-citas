@@ -8,26 +8,28 @@
       <div class="row center">
         <p>Elige la fecha y en qué momento del día:</p>
       </div>
-      <div class="row center">
+      <div class="container">
+        <div class="row">
+          <Carousel />
+        </div>
+        <div class="row center">
           <ul class="row md center">
             <OptionButton name="options" :checked="false"  @change="changeValue">Por la mañana</OptionButton>
             <OptionButton :checked="true" name="options"  @change="changeValue">Por la tarde</OptionButton>
           </ul>
       </div>
-      <div class="container">
-        <div class="row">
-          <Calendar />
-        </div>
       </div>
       <div class="container">
         <div class="row">
           <SendForm />
         </div>
-        <div class="row">
+        <div class="row center">
           <p>Al agendar, estás aceptando nuestro <a href="https://www.tucanton.com/avisoPrivacidad">Aviso de privacidad</a></p>
         </div>
+        <div class="row">
+          <Calendar />
+        </div>
       </div>
-      <Carousel />
     </div>
     <Footer></Footer>
   </div>

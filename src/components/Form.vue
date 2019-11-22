@@ -1,30 +1,29 @@
 <template>
-  <form class="form" @submit="checkForm" action="/something" method="post" novalidate="true">
-  <div class="row">
-      <p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
-    <ul>
-      <li v-for="error in errors" :key="error.index">{{ error }}</li>
-    </ul>
-  </p>
-  </div>
-    <div class="row">
+  <form class="form" @submit="checkForm" action="/" method="post" novalidate="true">
+    <div class="row" v-if="errors.length">
+        <p class="error">Por favor llena los siguientes campos:</p>
+        <ul class="errors">
+          <li v-for="error in errors" :key="error.index">{{ error }}</li>
+        </ul>
+      </div>
+    <div class="col field">
       <label>Nombre</label>
-      <input class="input" type="text" v-model="name" />
+      <input class="input" type="text" v-model="name" placeholder="Nombre" />
     </div>
-    <div class="row">
+    <div class="col field">
       <label>Teléfono</label>
-      <input type="tel" v-model="phone" />
+      <input class="input" type="tel" v-model="phone" placeholder="10 dígitos" />
     </div>
-    <div class="row">
+    <div class="col field">
       <label>Correo electrónico</label>
-      <input type="email" v-model="mail" />
+      <input class="input" type="email" v-model="mail" placeholder="usuario@correo.com" />
     </div>
-    <div class="row">
-      <button class="button" type="submit">Agendar visita</button>
+    <div class="row field">
+      <button class="button large" type="submit">Agendar visita</button>
     </div>
   </form>
 </template>
+
 
 <script>
 export default {
@@ -55,3 +54,48 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../scss/index.scss";
+.form {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+
+  .input {
+    border: 0.1rem solid $grey-lite;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    text-indent: 0.4rem;
+  }
+
+  .field {
+    margin: 0.8rem 0;
+    label {
+      font-weight: $bold;
+    }
+  }
+
+  .error {
+    background-color: rgba($error, 0.1);
+    display: block;
+    padding: 1.8rem;
+    color: $error;
+    width: 100%;
+  }
+
+  .errors {
+    display: block;
+    padding: 1.8rem;
+    margin: 0 0 0 16%;
+    width: 100%;
+
+    & > li {
+      color: $error;
+    }
+  }
+}
+</style>

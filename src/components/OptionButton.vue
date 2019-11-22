@@ -34,16 +34,17 @@ export default {
 @import "../scss/index.scss";
 .radio-wrap {
   background-color: $clear;
-  margin: 8% 0 8% 3.2rem ;
+  margin: 8% 0 8% 3.2rem;
   &:first-child {
     margin-left: 0;
   }
 
   span {
     border: 0.1rem solid $grey-lite;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.8rem;
     width: 140px;
     text-align: center;

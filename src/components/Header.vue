@@ -37,6 +37,10 @@ ul {
     list-style-type: none;
     width: 100%;
 
+    @include mobile(780px){
+        display: none;
+    }
+
     & > li {
         display: flex;
         margin: 0 2.4rem;
@@ -52,14 +56,6 @@ ul {
             text-decoration: none;
             font-weight: $regular;
             color: $blackio;
-        }
-
-        button {
-            border: none;
-            border-radius: 0.4rem;
-            background-color: $primary;
-            color: $clear;
-            padding: 0.8rem;
         }
     }
 }
