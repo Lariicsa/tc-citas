@@ -2,25 +2,25 @@
   <div class="carousel">
     <div class="carousel-controls">
       <div class="card-carousel--nav__left" @click="moveCarousel(-1)" :disabled="atHeadOfList"></div>
-      <div class="card-carousel--nav__right" @click="moveCarousel(1)" :disabled="atEndOfList"></div>
-    </div>
-    <div class="card-carousel-wrapper">
-      <div class="card-carousel">
-        <div class="card-carousel--overflow-container">
-          <div
-            class="card-carousel-cards"
-            :style="{ transform: 'translateX' + '(' + currentOffset + 'rem' + ')'}"
-          >
-            <div class="card-carousel--card" v-for="(item, index) in items" :key="index">
-              <div class="card-carousel--card--footer">
-                <span>{{ item.month }}</span>
-                <p>{{ item.number }}</p>
-                <span>{{ item.day }}</span>
+      <div class="card-carousel-wrapper">
+        <div class="card-carousel">
+          <div class="card-carousel--overflow-container">
+            <div
+              class="card-carousel-cards"
+              :style="{ transform: 'translateX' + '(' + currentOffset + 'rem' + ')'}"
+            >
+              <div class="card-carousel--card" v-for="(item, index) in items" :key="index">
+                <div class="card-carousel--card--footer">
+                  <span>{{ item.month }}</span>
+                  <p>{{ item.number }}</p>
+                  <span>{{ item.day }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="card-carousel--nav__right" @click="moveCarousel(1)" :disabled="atEndOfList"></div>
     </div>
   </div>
 </template>
@@ -94,6 +94,9 @@ export default {
 <style lang="scss" scoped>
 @import "../scss/index.scss";
 .carousel {
+  display: flex;
+  height: 100%;
+  min-height: 12rem;
   width: 100%;
   position: relative;
 

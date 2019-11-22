@@ -27,6 +27,12 @@
           <p>Al agendar, estás aceptando nuestro <a href="https://www.tucanton.com/avisoPrivacidad">Aviso de privacidad</a></p>
         </div>
       </div>
+
+      <div class="container">
+        <div class="row">
+          <Calendar />
+        </div>
+      </div>
     </div>
     <Footer></Footer>
   </div>

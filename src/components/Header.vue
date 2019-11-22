@@ -64,8 +64,7 @@ header {
           color: $blackio;
         }
       }
-
-      @include mobile(700px) {
+      @include mobile(895px) {
         display: none;
       }
     }

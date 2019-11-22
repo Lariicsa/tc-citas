@@ -41,7 +41,8 @@ export default {
 
   span {
     border: 0.1rem solid $grey-lite;
-    border-radius: 0.1rem;
+    background-color: $clear;
+    border-radius: 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +51,7 @@ export default {
     text-align: center;
 
     &:hover {
-      border: 0.1rem solid $primary;
+      border-color: $primary;
       cursor: pointer;
     }
   }
@@ -63,7 +64,7 @@ export default {
 
   & > [type="radio"]:checked + span {
     background-color: $clear;
-    border: 0.2rem solid $secondary;
+    border: 0.1rem solid $secondary;
     position: relative;
     display: inline-block;
     transition: 0.1s ease;
