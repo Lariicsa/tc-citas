@@ -47,10 +47,12 @@ select {
 .space {
   background-color: $clear;
   display: flex;
+  padding-bottom: 10rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 .container {
@@ -89,7 +91,6 @@ select {
 
   &.md {
     width: 48%;
-
     @include mobile(680px) {
       width: 100%;
     }

@@ -31,45 +31,44 @@ header {
   width: 100%;
 
   nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1.6rem;
-  flex-wrap: wrap;
-
-  ul {
     display: flex;
-    margin: 0 auto;
-    padding: 0;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    list-style-type: none;
     width: 100%;
+    padding: 1.6rem;
+    flex-wrap: wrap;
 
-    @include mobile(700px) {
-      display: none;
-    }
-    
-    & > li {
+    ul {
       display: flex;
-      margin: 0 2.4rem;
-      flex-direction: column;
-      justify-content: center;
+      margin: 0 auto;
+      padding: 0;
+      justify-content: flex-start;
       align-items: center;
+      list-style-type: none;
+      width: 100%;
 
-      &:nth-child(2) {
-        margin-left: 4.8rem;
+      & > li {
+        display: flex;
+        margin: 0 2.4rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-child(2) {
+          margin-left: 4.8rem;
+        }
+
+        & > a {
+          text-decoration: none;
+          font-weight: $regular;
+          color: $blackio;
+        }
       }
 
-      & > a {
-        text-decoration: none;
-        font-weight: $regular;
-        color: $blackio;
+      @include mobile(700px) {
+        display: none;
       }
     }
-
   }
-}
 }
 </style>

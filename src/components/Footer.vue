@@ -20,9 +20,12 @@
 
 footer {
   display: flex;
-  height: 10vh;
+  height: 8vh;
   background-color: $primary;
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   * {
     font-size: $regular-size;
