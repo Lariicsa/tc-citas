@@ -154,3 +154,16 @@ button {
   }
 }
 
+.hide-on-mobile {
+  display: flex;
+  @include mobile(780px) {
+    display: none;
+  }
+}
+
+.show-on-mobile {
+  display: none;
+  @include mobile(780px) {
+    display: flex;
+  }
+}
