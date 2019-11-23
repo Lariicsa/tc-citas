@@ -2,7 +2,6 @@
   <div class="calendar">
     <div class="header">
       <a class="arrow" @click="movePreviousMonth">&lsaquo;</a>
-      <span class="title" @click="moveThisMonth">{{ header.label }}</span>
       <a class="arrow" @click="moveNextMonth">&rsaquo;</a>
     </div>
     <div class="week">
@@ -12,7 +11,9 @@
           :class="{ today: day.isToday, 'not-in-month': !day.inMonth }"
           v-for="day in week"
           :key="day.index"
-        >{{ day[dayKey]}}</div>
+        >
+        <span class="title" @click="moveThisMonth" :key="week.index">{{ header.label }}</span>
+        {{ day[dayKey]}}</div>
       </template>
     </div>
   </div>
@@ -21,8 +22,8 @@
 <script>
 /* eslint-disable */
 const _daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const _weekdayLabels = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const _monthLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const _weekdayLabels = [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
+const _monthLabels = ['Enero', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const _today = new Date();
 const _todayComps = {
   year: _today.getFullYear(),

@@ -21,8 +21,9 @@
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../scss/index.scss";
+
 header {
   border-bottom: 0.1rem solid $grey-lite;
   display: flex;
