@@ -1,4 +1,12 @@
-# tc-citas
+# Formulario de citas para precalificación
+
+Responsive landing page ready to receive data.
+
+Used technologies:
+
+- Vue
+- Sass
+- Babel
 
 ## Project setup
 ```
