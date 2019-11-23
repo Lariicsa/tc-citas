@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const FaviconsWebPackPlugin = require('favicons-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
@@ -34,11 +33,7 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
-      }
-    ]
-  },
-  module: {
-    rules: [
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -57,11 +52,11 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
+          isDev ? 'vue-style-loader' : MiniCSSExtractPlugin.loader,
+          { loader: 'css-loader', options: { sourceMap: isDev } },
+          { loader: 'sass-loader', options: { sourceMap: isDev } }
         ]
-      }
+      },
     ]
   },
   plugins: [
@@ -69,6 +64,6 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html'
     }),
-    new FaviconsWebPackPlugin('./public/icon.png')
+    new VueLoaderPlugin()
   ]
 }

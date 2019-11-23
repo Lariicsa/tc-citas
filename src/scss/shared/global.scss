@@ -1,4 +1,6 @@
-@import "./mixins.scss";
+@import "normalize.scss";
+@import "_vars.scss";
+@import "_mixins.scss";
 
 html {
   box-sizing: border-box;
@@ -152,8 +154,3 @@ button {
   }
 }
 
-@mixin mobile($device) {
-  @media screen and (max-width: $device - 1px) {
-    @content;
-  }
-}
