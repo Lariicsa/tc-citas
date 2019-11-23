@@ -79,6 +79,7 @@ export default {
 
     &:focus {
       border: 0.1rem solid $grey;
+      font-weight: $bold;
     }
   }
 

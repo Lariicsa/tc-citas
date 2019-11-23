@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import Calendar from './components/Calendar.vue'
 import Carousel from './components/Carousel.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
@@ -43,7 +42,6 @@ import OptionButton from "./components/OptionButton";
 export default {
   name: "app",
   components: {
-    Calendar,
     Carousel,
     Header,
     Footer,
