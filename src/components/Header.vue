@@ -1,22 +1,22 @@
 <template>
   <header>
     <nav>
-      <ul class="row left">
+      <ul class="row left" :class="{ 'open' : isOpen }">
         <li>
           <a href="/">
             <img src="../assets/tu-canton_logo.svg" alt="tu canton" height="40" />
           </a>
         </li>
-        <li class="hide-on-mobile">
+        <li class="hide-on-mobile" :class="{ 'open' : isOpen }">
           <a href="/">Comprar</a>
         </li>
-        <li class="hide-on-mobile">
+        <li class="hide-on-mobile" :class="{ 'open' : isOpen }">
           <a href="/">Precalifícate</a>
         </li>
       </ul>
       <div class="right">
         <button class="hide-on-mobile">Iniciar sesión</button>
-        <div class="burger show-on-mobile">
+        <div @click.prevent="toggle" class="burger show-on-mobile" :class="{ 'open' : isOpen }">
           <span></span>
           <span></span>
           <span></span>
@@ -28,6 +28,7 @@
 
 <style lang="scss">
 @import "../scss/index.scss";
+@import "../scss/shared/_mixins.scss";
 
 header {
   border-bottom: 0.1rem solid $grey-lite;
@@ -52,6 +53,13 @@ header {
       align-items: center;
       list-style-type: none;
       width: 100%;
+
+      &.open {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        height: 20vh;
+      }
 
       & > li {
         display: flex;
@@ -95,8 +103,42 @@ header {
           border-radius: 100%;
           padding: 4px;
         }
+
+        &.open {
+          span {
+            &:first-child {
+              transform: rotate(135deg);
+            }
+            transform: rotate(-135deg);
+            &:nth-child(2) {
+              display: none;
+            }
+            &:last-child {
+              position: absolute;
+              top: 107px;
+              width: 38px;
+            }
+          }
+        }
       }
     }
   }
+
+  .open {
+    display: flex;
+  }
 }
 </style>
+
+<script>
+export default {
+  data: () => ({
+    isOpen: false
+  }),
+  methods: {
+    toggle() {
+      this.isOpen = !this.isOpen;
+    }
+  }
+};
+</script>
