@@ -6,9 +6,9 @@
       </div>
       <div class="row md right">
         <ul>
-          <li>fb</li>
-          <li>yt</li>
-          <li>ig</li>
+          <li class="social fb"></li>
+          <li class="social yt"></li>
+          <li class="social ig"></li>
         </ul>
       </div>
     </div>

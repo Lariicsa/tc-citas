@@ -1,6 +1,8 @@
+@import "./mixins";
+
 html {
   box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 62.5%;
   height: 100%;
   width: 100%;
@@ -13,7 +15,7 @@ body {
 * {
   box-sizing: border-box;
   font-size: $regular-size;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: $blackio;
 }
 
@@ -51,8 +53,12 @@ select {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  flex-wrap: wrap;
 }
 
 .container {
@@ -126,6 +132,23 @@ button {
   &.large {
     padding: 1rem 0;
     width: 100%;
+  }
+}
+
+.social {
+  color: $clear;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-position: center;
+
+  &.fb {
+    @include icon-set(fb);
+  }
+  &.ig {
+    @include icon-set(ig);
+  }
+  &.yt {
+    @include icon-set(yt);
   }
 }
 
