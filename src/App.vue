@@ -13,7 +13,7 @@
           <Carousel />
         </div>
         <div class="row center">
-          <ul class="row md center">
+          <ul class="row center">
             <OptionButton name="options" :checked="false"  @change="changeValue">Por la mañana</OptionButton>
             <OptionButton :checked="true" name="options"  @change="changeValue">Por la tarde</OptionButton>
           </ul>
@@ -25,12 +25,6 @@
         </div>
         <div class="row center">
           <p>Al agendar, estás aceptando nuestro <a href="https://www.tucanton.com/avisoPrivacidad">Aviso de privacidad</a></p>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <Calendar />
         </div>
       </div>
     </div>

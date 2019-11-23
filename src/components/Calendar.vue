@@ -23,7 +23,7 @@
 /* eslint-disable */
 const _daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const _weekdayLabels = [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
-const _monthLabels = ['Enero', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const _monthLabels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 const _today = new Date();
 const _todayComps = {
   year: _today.getFullYear(),
@@ -77,11 +77,12 @@ export default {
     months() {
       return _monthLabels.map((ml, i) => ({
         label: ml,
-        label_1: ml.substring(0, 1),
-        label_2: ml.substring(0, 2),
-        label_3: ml.substring(0, 3),
-        number: i + 1,
+        label_1: ml.substring(0, 3),
       }));
+    },
+    allMonths() {
+      return this.months
+      
     },
     // State for weekday header (no dependencies yet...)
     weekdays() {
@@ -100,12 +101,13 @@ export default {
     // State for calendar header
     header() {
       const month = this.months[this.monthIndex];
+      this.allMonths
       return {
         month: month,
         year: this.year.toString(),
         shortYear: this.year.toString().substring(2, 4),
         label: month.label
-      };
+      }
     },
     // Returns number for first weekday (1-7), starting from Sunday
     firstWeekdayInMonth() {
@@ -188,6 +190,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/index.scss";
+
 calendar-layout {
   min-width: 400px;
 }
@@ -202,11 +206,11 @@ calendar-layout {
   display: flex;
   justify-content: stretch;
   align-items: center;
-  color: white;
+  color: $clear;
   padding: 0.5rem 1rem;
   border-width: 1px;
   border-style: solid;
-  border-color: #aaaaaa;
+  border-color: $grey;
   background-color: #ff7a58;
 }
 .header .arrow {
@@ -230,7 +234,7 @@ calendar-layout {
   text-align: center;
 }
 .header .title:hover {
-  color: #dcdcdc;
+  color: $grey;
 }
 
 .weekdays {
@@ -243,17 +247,17 @@ calendar-layout {
   justify-content: center;
   align-items: center;
   padding: 0.4rem 0;
-  color: #7a7a7a;
+  color: $grey;
   border-width: 1px;
   border-style: solid;
-  border-color: #aaaaaa;
-  background-color: #eaeaea;
+  border-color: $grey;
+  background-color: $grey-lite;
   cursor: default;
 }
 
 .week {
   display: flex;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .day {

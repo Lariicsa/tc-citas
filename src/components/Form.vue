@@ -1,11 +1,11 @@
 <template>
   <form class="form" @submit="checkForm" action="/" method="post" novalidate="true">
     <div class="row" v-if="errors.length">
-        <p class="error">Por favor llena los siguientes campos:</p>
-        <ul class="errors">
-          <li v-for="error in errors" :key="error.index">{{ error }}</li>
-        </ul>
-      </div>
+      <p class="error">Por favor llena los siguientes campos:</p>
+      <ul class="errors">
+        <li v-for="error in errors" :key="error.index">{{ error }}</li>
+      </ul>
+    </div>
     <div class="col field">
       <label>Nombre</label>
       <input class="input" type="text" v-model="name" placeholder="Nombre" />
@@ -16,7 +16,7 @@
     </div>
     <div class="col field">
       <label>Correo electrónico</label>
-      <input class="input" type="email" v-model="mail" placeholder="usuario@correo.com" />
+      <input class="input" type="email" v-model="mail" placeholder="usuario@correo.com" required />
     </div>
     <div class="row field">
       <button class="button large" type="submit">Agendar visita</button>
@@ -65,11 +65,17 @@ export default {
   align-items: center;
   width: 70%;
 
+  @include mobile(700px) {
+    width: 100%;
+  }
+
   .input {
     border: 0.1rem solid $grey-lite;
-    border-radius: 0.2rem;
-    padding: 0.8rem;
+    border-radius: 0.4rem;
+    padding: 0 0.8rem;
     text-indent: 0.4rem;
+    height: 4rem;
+    margin-bottom: 1.6rem;
 
     &:focus {
       border: 0.1rem solid $grey;

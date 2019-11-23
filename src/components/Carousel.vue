@@ -10,11 +10,9 @@
               :style="{ transform: 'translateX' + '(' + currentOffset + 'rem' + ')'}"
             >
               <div class="card-carousel--card" v-for="(item, index) in items" :key="index">
-                <div class="card-carousel--card--footer">
-                  <span>{{ item.month }}</span>
-                  <p>{{ item.number }}</p>
-                  <span>{{ item.day }}</span>
-                </div>
+                <span>{{ item.month }}</span>
+                <p>{{ item.number }}</p>
+                <span>{{ item.day }}</span>
               </div>
             </div>
           </div>
@@ -25,46 +23,35 @@
   </div>
 </template>
 <script>
-/* eslint-disable */
 export default {
   name: "Carousel",
   data() {
     return {
       currentOffset: 0,
-      windowSize: 3,
+      windowSize: 10,
       paginationFactor: 10,
       items: [
-        { month: "Ene", day: "Lunes", number: "1" },
-        { month: "Ene", day: "Martes", number: "2" },
-        { month: "Ene", day: "Miercoles", number: "3" },
-        { month: "Ene", day: "Jueves", number: "4" },
-        { month: "Ene", day: "Viernes", number: "5" },
-        { month: "Ene", day: "Sábado", number: "6" },
-        { month: "Ene", day: "Domingo", number: "7" },
-        { month: "Ene", day: "Lunes", number: "8" },
-        { month: "Ene", day: "Martes", number: "9" },
-        { month: "Ene", day: "Miercoles", number: "10" },
-        { month: "Ene", day: "Jueves", number: "11" },
-        { month: "Ene", day: "Viernes", number: "12" },
-        { month: "Ene", day: "Sábado", number: "13" },
-        { month: "Ene", day: "Domingo", number: "14" },
-        { month: "Ene", day: "Lunes", number: "15" },
-        { month: "Ene", day: "Martes", number: "16" },
-        { month: "Ene", day: "Miercoles", number: "17" },
-        { month: "Ene", day: "Jueves", number: "18" },
-        { month: "Ene", day: "Viernes", number: "19" },
-        { month: "Ene", day: "Sábado", number: "10" },
-        { month: "Ene", day: "Domingo", number: "21" },
-        { month: "Ene", day: "Lunes", number: "22" },
-        { month: "Ene", day: "Martes", number: "23" },
-        { month: "Ene", day: "Miercoles", number: "24" },
-        { month: "Ene", day: "Jueves", number: "25" },
-        { month: "Ene", day: "Viernes", number: "26" },
-        { month: "Ene", day: "Sábado", number: "27" },
-        { month: "Ene", day: "Domingo", number: "28" },
-        { month: "Ene", day: "Lunes", number: "29" },
-        { month: "Ene", day: "Martes", number: "30" },
-        { month: "Ene", day: "Miercoles", number: "31" }
+        { month: "Nov", day: "Sab", number: "20" },
+        { month: "Nov", day: "Dom", number: "21" },
+        { month: "Nov", day: "Lun", number: "22" },
+        { month: "Nov", day: "Mar", number: "23" },
+        { month: "Nov", day: "Mie", number: "24" },
+        { month: "Nov", day: "Jue", number: "25" },
+        { month: "Nov", day: "Vie", number: "26" },
+        { month: "Nov", day: "Sab", number: "27" },
+        { month: "Nov", day: "Dom", number: "28" },
+        { month: "Nov", day: "Lun", number: "29" },
+        { month: "Nov", day: "Mar", number: "30" },
+        { month: "Dic", day: "Dom", number: "1" },
+        { month: "Dic", day: "Lun", number: "2" },
+        { month: "Dic", day: "Mar", number: "3" },
+        { month: "Dic", day: "Mie", number: "4" },
+        { month: "Dic", day: "Jue", number: "5" },
+        { month: "Dic", day: "Vie", number: "6" },
+        { month: "Dic", day: "Sab", number: "7" },
+        { month: "Dic", day: "Dom", number: "8" },
+        { month: "Dic", day: "Lun", number: "9" },
+        { month: "Dic", day: "Mar", number: "10" }
       ]
     };
   },
@@ -137,7 +124,7 @@ export default {
       box-sizing: border-box;
       border-top: 0.8rem solid $grey-lite;
       border-right: 0.8rem solid $grey-lite;
-      margin: 0 ;
+      margin: 0;
       transition: transform 150ms linear;
       cursor: pointer;
       &[disabled] {
@@ -168,14 +155,18 @@ export default {
     transform: translatex(0rem);
 
     .card-carousel--card {
-      margin: 0 1rem;
-      cursor: pointer;
-      box-shadow: 0 0.4rem 1.5rem 0 rgba(40, 44, 53, 0.06),
-        0 0.2rem 0.2rem 0 rgba(40, 44, 53, 0.08);
       background-color: $clear;
-      border-radius: 0.4rem;
+      border: 0.1rem solid $grey-lite;
+      border-radius: 0.2rem;
+      display: flex;
+      padding: 0.8rem;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0 1rem;
+      min-width: 5.2rem;
+      cursor: pointer;
       z-index: 3;
-      margin-bottom: 0.2rem;
 
       &:first-child {
         margin-left: 0;
@@ -185,56 +176,18 @@ export default {
         margin-right: 0;
       }
 
-      &--footer {
-        border-top: 0;
-        padding: 0.7rem 1.5rem;
+      p {
+        padding: 0.3rem 0;
+        margin: 0;
+        margin-bottom: 0.2rem;
+        font-size: $big-size;
+        font-weight: 500;
+        color: $blackio;
+        user-select: none;
+      }
 
-        p {
-          padding: 0.3rem 0;
-          margin: 0;
-          margin-bottom: 0.2rem;
-          font-size: $big-size;
-          font-weight: 500;
-          color: $grey;
-          user-select: none;
-
-          &:nth-of-type(2) {
-            font-size: 1.2rem;
-            font-weight: 300;
-            padding: 0.6rem;
-            background: rgba(40, 44, 53, 0.06);
-            display: inline-block;
-            position: relative;
-            margin-left: 0.4rem;
-            color: $grey;
-
-            &:before {
-              content: "";
-              float: left;
-              position: absolute;
-              top: 0;
-              left: -1.2rem;
-              width: 0;
-              height: 0;
-              border-color: transparent rgba(40, 44, 53, 0.06) transparent
-                transparent;
-              border-style: solid;
-              border-width: 1.2rem 1.2rem 1.2rem 0;
-            }
-
-            &:after {
-              content: "";
-              position: absolute;
-              top: 1rem;
-              left: -0.1rem;
-              float: left;
-              width: 0.4rem;
-              height: 0.4rem;
-              border-radius: 0.2rem;
-              background: $clear;
-            }
-          }
-        }
+      span {
+        font-size: $small-size;
       }
     }
   }
